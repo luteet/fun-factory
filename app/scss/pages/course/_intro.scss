@@ -1,0 +1,88 @@
+.cource-intro {
+
+	margin-top: -20px;
+
+	@include _992 {
+		margin-top: 20px;
+	}
+
+	display: grid;
+	@include _768 {
+		grid-template-columns: 1fr 1fr;
+	}
+	gap: 20px;
+
+	// .cource-intro__image
+
+	&__image {
+		min-height: 247px;
+		@include _768 {
+			min-height: 100%;
+		}
+
+		&--wrapper {
+			min-height: 100%;
+		}
+	}
+
+	// .cource-intro__content
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+	}
+
+	// .cource-intro__title
+
+	&__title {
+	}
+
+	// .cource-intro__text
+
+	&__text {
+		margin-top: 24px;
+
+
+	}
+
+	// .cource-intro__price
+
+	&__price {
+		margin-top: 16px;
+		display: block;
+
+	}
+
+	// .cource-intro__footer
+
+	&__footer {
+		display: flex;
+		align-items: flex-end;
+		.btn-wrapper {
+			width: 100%;
+		}
+		@include _550 {
+			justify-content: flex-start;
+			.btn-wrapper {
+				width: auto;
+			}
+		}
+
+		flex: 1 1 auto;
+		padding-top: 24px;
+		@include _768 {
+			padding-top: 40px;
+		}
+
+	}
+
+	// .cource-intro__btn
+
+	&__btn {
+		min-width: 100%;
+		@include _550 {
+			min-width: 365px;
+		}
+		text-transform: uppercase;
+	}
+}

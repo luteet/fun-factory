@@ -1,0 +1,85 @@
+@@include("../html/_header-heb.html", {
+	"class": ""
+})
+
+	<main class="main padding-bottom">
+		<section class="page-hero">
+			<div class="page-hero__start container">
+				@@include("../html/heb/_anim-background.html", {
+					"class": "page-hero__background",
+				})
+				<h1 class="page-hero__title main-title">
+					קורסים
+				</h1>
+			</div>
+			<div class="page-hero__body container">
+				<div class="page-hero__breadcrumbs breadcrumbs">
+					<a href="#" class="breadcrumbs__link">בית</a>
+					<span class="breadcrumbs__separator">
+						<svg width="20" height="20" viewBox="0 0 20 20">
+							<use xlink:href="../img/sprites.svg#separator"></use>
+						</svg>
+					</span>
+					<span class="breadcrumbs__current">קורסים</span>
+				</div>
+			</div>
+		</section>
+		<section class="courses container none-padding-top">
+			<h2 class="visually-hidden">קורסים</h2>
+			<div class="courses__hero">
+				<video src="../img/courses/courses-decor.mp4" playslinline muted autoplay width="256" height="264" class="courses__hero--decor"></video>
+				<b class="courses__hero--text title _min">
+					Какая-то общая краткая информация про курсы. Какая-то общая краткая информация про курсы. Какая-то общая краткая информация про курсы. Какая-то общая краткая информация про курсы
+				</b>
+			</div>
+			<div class="courses__nav">
+				<div class="courses__nav--body">
+					<a href="#online-block" class="courses__nav--btn is-active">
+						Онлайн
+					</a>
+					<a href="#offline-block" class="courses__nav--btn">
+						Офлайн
+					</a>
+				</div>
+			</div>
+			<div class="courses__wrapper">
+				<div class="courses__block is-active" id="online-block">
+					<ul class="courses__list">
+						@@loop("../html/heb/_courses-card.html", [
+
+							{},
+							{},
+							{},
+
+							{},
+							{},
+							{},
+
+						])
+					</ul>
+				</div>
+				<div class="courses__block" id="offline-block">
+					<ul class="courses__list">
+						@@loop("../html/heb/_courses-card.html", [
+						
+							{},
+							{},
+							{},
+
+							{},
+							{},
+							{},
+
+							{},
+							{},
+
+						])
+					</ul>
+				</div>
+			</div>
+		</section>
+		@@include("../html/heb/_reviews.html")
+		@@include("../html/heb/_portfolio.html")
+	</main>
+
+@@include("../html/_footer-heb.html")

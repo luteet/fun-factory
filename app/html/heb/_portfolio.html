@@ -1,0 +1,55 @@
+<section class="portfolio">
+	<h2 class="portfolio__title section-title container">
+		Фото наших работ
+	</h2>
+	<div class="portfolio__block">
+		<div class="portfolio__slider splide">
+			<div class="portfolio__track splide__track">
+				<ul class="portfolio__list splide__list">
+					@@loop("_portfolio-slide.html", [
+						{
+							"image" : "1",
+							"width": "522",
+							"height": "341",
+						},
+						{
+							"image" : "2",
+							"width": "522",
+							"height": "341",
+						},
+						{
+							"image" : "3",
+							"width": "422",
+							"height": "341",
+						},
+						{
+							"image" : "1",
+							"width": "522",
+							"height": "341",
+						},
+						{
+							"image" : "2",
+							"width": "522",
+							"height": "341",
+						},
+					])
+				</ul>
+			</div>
+			<div class="portfolio__nav slider-nav splide__arrows _alt">
+				<button class="portfolio__arrow slider-arrow splide__arrow splide__arrow--prev _alt" type="button">
+					<svg width="38" height="38" viewBox="0 0 38 38">
+						<use xlink:href="../img/sprites.svg#slider-arrow-next"></use>
+					</svg>
+				</button>
+				<div class="portfolio__pages-length slider-pages-length _alt">
+					1/8
+				</div>
+				<button class="portfolio__arrow slider-arrow splide__arrow splide__arrow--next _alt" type="button">
+					<svg width="38" height="38" viewBox="0 0 38 38">
+						<use xlink:href="../img/sprites.svg#slider-arrow-next"></use>
+					</svg>
+				</button>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,47 @@
+<section class="reviews container">
+	<h2 class="reviews__title section-title">
+		Отзывы <br> наших клиентов
+	</h2>
+	<a href="#" class="reviews__leave">
+		Оставить отзыв
+	</a>
+	<div class="reviews__slider splide">
+		<div class="reviews__track splide__track">
+			<ul class="reviews__list splide__list">
+				@@loop("_reviews-card.html", [
+					{},
+					{},
+					{},
+					{},
+					{},
+				])
+			</ul>
+		</div>
+		<div class="reviews__nav slider-nav splide__arrows">
+			<button class="reviews__arrow slider-arrow splide__arrow splide__arrow--prev" type="button">
+				<svg width="38" height="38" viewBox="0 0 38 38">
+					<use xlink:href="img/sprites.svg#slider-arrow-next"></use>
+				</svg>
+			</button>
+			<div class="reviews__pages-length slider-pages-length">
+				1/8
+			</div>
+			<button class="reviews__arrow slider-arrow splide__arrow splide__arrow--next" type="button">
+				<svg width="38" height="38" viewBox="0 0 38 38">
+					<use xlink:href="img/sprites.svg#slider-arrow-next"></use>
+				</svg>
+			</button>
+		</div>
+	</div>
+	<div class="reviews__footer">
+		<div class="btn-wrapper">
+			<a href="#" class="reviews__more-btn btn">
+				<span>все отзывы</span>
+				<svg width="24" height="24" viewBox="0 0 24 24">
+					<use xlink:href="img/sprites.svg#circle-arrow-next"></use>
+				</svg>
+			</a>
+			<div class="btn-circle"></div>
+		</div>
+	</div>
+</section>

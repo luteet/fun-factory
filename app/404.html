@@ -1,0 +1,51 @@
+@@include("html/_header.html", {
+	"class": " active-shadow"
+})
+
+	<main class="main">
+		<section class="not-found container">
+			<div class="not-found__background" aria-hidden="true" style="background-image: url(img/404/404-decor-background.svg);">
+				<div class="not-found__background--item">
+					<img src="img/404/404-decor-element-1.svg" width="153" height="203" loading="lazy" alt="">
+				</div>
+				<div class="not-found__background--item">
+					<img src="img/404/404-decor-element-3.svg" width="125" height="165" loading="lazy" alt="">
+				</div>
+				<div class="not-found__background--item">
+					<img src="img/404/404-decor-element-2.svg" width="213" height="282" loading="lazy" alt="">
+				</div>
+				<div class="not-found__background--item">
+					<img src="img/404/404-decor-element-2.svg" width="97" height="127" loading="lazy" alt="">
+				</div>
+				<div class="not-found__background--item">
+					<img src="img/404/404-decor-element-3.svg" width="133" height="176" loading="lazy" alt="">
+				</div>
+				<div class="not-found__background--item">
+					<img src="img/404/404-decor-element-1.svg" width="225" height="298" loading="lazy" alt="">
+				</div>
+			</div>
+			<h2 class="not-found__code">
+				404
+			</h2>
+			<div class="not-found__content">
+				<h3 class="title _min">
+					ОЙ! <br>
+					кажется, что-то пошло не так
+				</h3>
+				<p>
+					Страница, которую вы запрашиваете, не существует. Возможно она устарела, была удалена или был введен неверный адрес в адресной строке.
+				</p>
+				<div class="btn-wrapper">
+					<a href="#" class="not-found__btn btn" aria-label="Перейти на главную">
+						<span>Перейти на главную</span>
+						<svg width="24" height="24" viewBox="0 0 24 24">
+							<use xlink:href="img/sprites.svg#circle-arrow-next"></use>
+						</svg>
+					</a>
+					<div class="btn-circle"></div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+@@include("html/_footer.html")

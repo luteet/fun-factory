@@ -1,0 +1,51 @@
+<div class="gallery__block">
+	<div class="gallery__slider splide">
+		<div class="gallery__slider--track splide__track">
+			<ul class="gallery__slider--list splide__list">
+				@@loop("_gallery-slide.html", [
+					{"image": "1"},
+					{"image": "2"},
+					{"image": "3"},
+					{"image": "1"},
+					{"image": "2"},
+					{"image": "3"},
+					{"image": "1"},
+					{"image": "2"},
+					{"image": "3"},
+				])
+			</ul>
+		</div>
+		<div class="gallery__nav splide__arrows slider-nav">
+			<button class="gallery__arrow slider-arrow splide__arrow splide__arrow--prev" type="button">
+				<svg width="38" height="38" viewBox="0 0 38 38">
+					<use xlink:href="../img/sprites.svg#slider-arrow-next"></use>
+				</svg>
+			</button>
+			<div class="gallery__pages-length slider-pages-length">
+				1/8
+			</div>
+			<button class="gallery__arrow slider-arrow splide__arrow splide__arrow--next" type="button">
+				<svg width="38" height="38" viewBox="0 0 38 38">
+					<use xlink:href="../img/sprites.svg#slider-arrow-next"></use>
+				</svg>
+			</button>
+		</div>
+	</div>
+	<div class="gallery__pagination splide">
+		<div class="gallery__pagination--track splide__track">
+			<ul class="gallery__pagination--list splide__list">
+				@@loop("_gallery-pagination-slide.html", [
+					{"image": "1"},
+					{"image": "2"},
+					{"image": "3"},
+					{"image": "1"},
+					{"image": "2"},
+					{"image": "3"},
+					{"image": "1"},
+					{"image": "2"},
+					{"image": "3"},
+				])
+			</ul>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,102 @@
+.you-get {
+
+	&__container {
+		position: relative;
+
+		display: grid;
+		@include _768 {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	// .you-get__title
+
+	&__title {
+		position: relative;
+		padding: 64px 0px 64px 0;
+		@include _768 {
+			padding: 80px 30px 80px 0;
+		}
+		&::before {
+			content: '';
+			position: absolute;
+			right: 50%; top: 0;
+			transform: translate(50%,0);
+			width: 100vw; height: 100%;
+			@include _768 {
+				right: 0;
+				transform: none;
+			}
+			background: var(--light-grey);
+			z-index: -1;
+		}
+	}
+
+	// .you-get__block
+
+	&__block {
+		color: var(--white);
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			left: 50%; top: 0;
+			transform: translate(-50%,0);
+			@include _768 {
+				left: 0;
+				transform: none;
+			}
+			width: 100vw; height: 100%;
+			background: var(--black);
+			z-index: -1;
+		}
+
+		padding: 32px 0;
+
+		@include _768 {
+			padding: 32px 0 32px 16px;
+		}
+		@include _992 {
+			padding: 80px 0 80px 40px;
+		}
+
+		ol {
+			li:not(:first-child) {
+				margin-top: 24px;
+			}
+
+			counter-reset: you_get_list_number;
+
+			list-style-type: none;
+			li {
+				position: relative;
+
+				padding-left: 40px;
+				@include _768 {
+					padding-left: 50px;
+				}
+				
+				&:nth-child(-n + 9)::before {
+					content: "0"counter(you_get_list_number);
+				}
+
+				&::before {
+					counter-increment: you_get_list_number;
+					content: counter(you_get_list_number);
+					position: absolute;
+					left: 0; top: 50%;
+					transform: translate(0,-50%);
+
+					font-size: 1.375rem;
+					@include _768 {
+						font-size: 1.5rem;
+					}
+					line-height: 116.667%;
+					font-weight: 700;
+					
+				}
+				
+			}
+		}
+	}
+}

@@ -1,0 +1,46 @@
+.about-cource {
+
+	display: grid;
+	gap: 32px;
+	@include _768 {
+		grid-template-columns: 1fr 1fr;
+		gap: 20px;
+	}
+
+	// .about-cource__title
+
+	&__title {
+		position: relative;
+		align-self: self-start;
+		justify-self: start;
+		@include _768 {
+			justify-self: stretch;
+		}
+		&::before {
+			content: '';
+			position: absolute;
+			right: 0; top: 0;
+			transform: translate(150%,-20%) scaleY(-1) rotate(-50deg);
+			width: 90px; height: 90px;
+			@include _768 {
+				top: 100%;
+				width: 190px; height: 190px;
+			}
+			
+			@include _container {
+				transform: translate(-70%,-20%) rotate(10deg);
+			}
+			
+			background: var(--decor-arrow);
+			pointer-events: none;
+		}
+	}
+
+	// .about-cource__text
+
+	&__text {
+		p:not(:first-child) {
+			padding-top: 16px;
+		}
+	}
+}

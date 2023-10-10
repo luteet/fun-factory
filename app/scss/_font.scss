@@ -1,0 +1,118 @@
+
+@font-face {
+	@include font-include('Arimo', 400, swap, normal, 'Arimo-Regular');
+}
+
+@font-face {
+	@include font-include('Arimo', 700, swap, normal, 'Arimo-Bold');
+}
+
+@font-face {
+	@include font-include('Arimo Hebrew', 400, swap, normal, 'ArimoHebrew-Regular');
+}
+
+@font-face {
+	@include font-include('Arimo Hebrew', 700, swap, normal, 'ArimoHebrew-Bold');
+}
+
+.main-title {
+	font-family: var(--title-font);
+	font-weight: 700;
+	line-height: 103.846154%;
+
+	font-size: 2.75rem;
+
+	@media (min-width: 360px) {
+		font-size: 3.25rem;
+	}
+
+	@include _550 {
+		font-size: 4rem;
+	}
+
+	@include _768 {
+		font-size: 5.5rem;
+	}
+
+	@include _992 {
+		font-size: 7.25rem;
+		line-height: 108.621%;
+	}
+}
+
+.title {
+	
+	font-family: var(--title-font);
+	font-weight: 700;
+	line-height: 114.286%;
+
+	font-size: 1.75rem; // 28px
+	&._min {
+		font-size: 1.375rem; // 22px
+	}
+
+	@include _768 {
+		font-size: 2rem; // 32px
+	}
+
+	@include _992 {
+		font-size: 2.25rem; // 36px
+		&._min {
+			font-size: 1.5rem; // 24px
+			line-height: 116.667%;
+		}
+		line-height: 111.111%;
+	}
+
+}
+
+.min-title {
+
+	font-size: 1.125rem; // 18px
+	line-height: 100%;
+	
+	@include _768 {
+		font-size: 1.25rem; // 20px
+	}
+	
+	@include _992 {
+		font-size: 1.375rem; // 22px
+	}
+}
+
+.caption {
+	font-size: 0.875rem;
+	line-height: 100%;
+}
+
+.section-title {
+
+	font-family: var(--title-font);
+	font-weight: 700;
+	line-height: 106.25%;
+
+	font-size: 2rem; // 32px
+
+	mark {
+		background: transparent;
+		color: var(--accent);
+	}
+
+	@include _550 {
+		font-size: 2.25rem; // 36px
+	}
+	
+	@include _768 {
+		font-size: 3rem; // 48px
+	}
+	
+	@include _992 {
+		font-size: 4rem; // 64px
+		line-height: 100%;
+	}
+
+}
+
+.txt-center {
+	text-align: center;
+}

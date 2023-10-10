@@ -1,0 +1,42 @@
+@import 'mixin';
+@import 'vars';
+@import 'libs';
+@import 'null';
+@import 'global';
+@import 'font';
+@import 'form';
+@import 'popup';
+
+@import 'components/header';
+@import 'components/anim-background';
+@import 'components/page-hero';
+
+@import 'pages/index/hero';
+@import 'pages/index/services';
+@import 'pages/index/reviews';
+@import 'pages/index/gallery';
+@import 'pages/index/our-partners';
+@import 'pages/index/feedback';
+
+@import 'pages/category/gallery-2';
+
+@import 'pages/tariffs/tariffs';
+@import 'pages/tariffs/gallery';
+
+@import 'pages/about-us/about-us';
+@import 'pages/about-us/advantages';
+
+@import 'pages/courses/courses';
+@import 'pages/courses/portfolio';
+
+@import 'pages/course/intro';
+@import 'pages/course/about-cource';
+@import 'pages/course/you-get';
+@import 'pages/course/why-me';
+@import 'pages/course/faq';
+
+@import 'pages/404/404';
+
+@import 'pages/text-section/text-section';
+
+@import 'components/footer';

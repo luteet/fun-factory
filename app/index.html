@@ -1,0 +1,108 @@
+@@include("html/_header.html", {
+	"class": ""
+})
+
+	<main class="main">
+		<section class="hero">
+			@@include("html/_anim-background.html", {
+				"class": "hero__background",
+			})
+			<div class="hero__container container">
+				<h1 class="hero__title main-title">
+					Фабрика развлечений
+				</h1>
+			</div>
+			<div class="hero__slider splide">
+				<div class="hero__track splide__track">
+					<ul class="hero__list splide__list">
+						@@loop("html/_hero-slide.html", [
+							{"image": '1'},
+							{"image": '2'},
+							{"image": '3'},
+							{"image": '4'},
+							{"image": '5'},
+						])
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section class="services container">
+			<h2 class="visually-hidden">
+				Услуги
+			</h2>
+			<ul class="services__list">
+				@@loop("html/_services-card.html", [
+					{
+						"class": "services__card ",
+						"title": "Организация мероприятий",
+					},
+					{
+						"class": "services__card ",
+						"title": "Дизайн",
+					},
+					{
+						"class": "services__card ",
+						"title": "Кейтеринг",
+					},
+					{
+						"class": "services__card ",
+						"title": "Фото/видео",
+					},
+					{
+						"class": "services__card ",
+						"title": "Развлекательные зоны",
+					},
+					{
+						"class": "services__card ",
+						"title": "Артисты",
+					},
+					{
+						"class": "services__card ",
+						"title": "Аниматоры",
+					},
+					{
+						"class": "services__card ",
+						"title": "Танцпол",
+					},
+				])
+			</ul>
+			<div class="btn-wrapper">
+				<button class="services__load-more btn" type="button">
+					<span>все услуги</span>
+					<svg width="24" height="24" viewBox="0 0 24 24">
+						<use xlink:href="img/sprites.svg#circle-arrow-next"></use>
+					</svg>
+				</button>
+				<div class="btn-circle"></div>
+			</div>
+		</section>
+		@@include("html/_reviews.html")
+		<section class="gallery container">
+			<h2 class="gallery__title section-title">
+				Галерея
+			</h2>
+			@@include("html/_gallery-block.html")
+		</section>
+		<section class="our-partners">
+			<h2 class="our-partners__title section-title">
+				Наши <br> партнеры
+			</h2>
+			<div class="our-partners__slider splide">
+				<div class="our-partners__track splide__track">
+					<ul class="our-partners__list splide__list">
+						@@loop("html/_our-partners-slide.html", [
+							{},
+							{},
+							{},
+							{},
+							{},
+							{},
+						])
+					</ul>
+				</div>
+			</div>
+		</section>
+		@@include("html/_feedback.html")
+	</main>
+
+@@include("html/_footer.html")

@@ -1,0 +1,87 @@
+@use 'sass:math';
+
+.portfolio {
+
+	// .portfolio__title
+
+	&__title {
+	}
+
+	// .portfolio__block
+
+	&__block {
+		padding-left: var(--container-padding);
+		margin-top: 32px;
+		
+		@include _992 {
+			margin-top: 54px;
+		}
+	
+		@media (min-width: #{$container}px) {
+			padding-left: max(var(--container-padding), calc(50% - #{math.div($container, 2)}px));
+		}
+	}
+
+	// .portfolio__slider
+
+	&__slider {
+		
+	}
+
+	// .portfolio__track
+
+	&__track {
+	}
+
+	// .portfolio__list
+
+	&__list {
+	}
+
+	// .portfolio__slide
+
+	&__slide {
+	}
+
+	// .portfolio__image
+
+	&__image {
+		height: 341px;
+		width: calc(100vw - 32px);
+		@include _768 {
+			width: auto;
+		}
+		transition: height .5s ease;
+		display: block;
+
+		background: var(--white);
+
+		aspect-ratio: var(--aspect-ratio);
+		padding-top: 0;
+		img {
+			position: static;
+			height: 100%; width: auto; min-width: 100%; max-width: 100%;
+			object-fit: cover;
+		}
+	}
+
+	// .portfolio__nav
+
+	&__nav {
+		justify-content: center;
+		padding-right: var(--container-padding);
+		@include _768 {
+			justify-content: flex-start;
+		}
+	}
+
+	// .portfolio__arrow
+
+	&__arrow {
+	}
+
+	// .portfolio__pages-length
+
+	&__pages-length {
+	}
+}

@@ -1,0 +1,84 @@
+@use 'sass:math';
+
+.our-partners {
+
+	padding-right: var(--container-padding);
+
+	display: flex;
+	flex-direction: column;
+
+	@include _992 {
+		flex-direction: row;
+		padding-right: 0;
+	}
+
+	padding-left: var(--container-padding);
+	
+	@media (min-width: #{$container}px) {
+		padding-left: max(var(--container-padding), calc(50% - #{math.div($container, 2)}px));
+	}
+
+	// .our-partners__title
+
+	&__title {
+		br {
+			display: none;
+		}
+		@include _992 {
+			display: inline-block;
+			width: 443px;
+			br {
+				display: inline-block;
+			}
+		}
+	}
+
+	// .our-partners__slider
+
+	&__slider {
+		
+		margin-top: 32px;
+		width: calc(100% - 443px);
+
+		padding-right: 80px;
+		@include _992 {
+			margin-top: 0;
+			padding-right: 0;
+		}
+	}
+
+	// .our-partners__track
+
+	&__track {
+		&.splide__track {
+			overflow: visible;
+			@include _992 {
+				overflow: hidden;
+			}
+		}
+	}
+
+	// .our-partners__list
+
+	&__list {
+	}
+
+	// .our-partners__slide
+
+	&__slide {
+		padding: 30px;
+		text-align: center;
+		background: var(--light-grey);
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		min-height: 126px;
+
+		img {
+			max-width: 100%;
+			object-fit: contain;
+		}
+	}
+}

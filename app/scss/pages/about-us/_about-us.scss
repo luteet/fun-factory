@@ -1,0 +1,84 @@
+@use 'sass:math';
+
+.about-us {
+
+	background: var(--light-grey);
+
+	// .about-us__title
+
+	&__title {
+	}
+
+	// .about-us__block
+
+	&__block {
+		margin-top: 24px;
+
+		@include _992 {
+			margin-top: 64px;
+			display: flex;
+		}
+
+		padding-left: var(--container-padding);
+	
+		@media (min-width: #{$container}px) {
+			padding-left: max(var(--container-padding), calc(50% - #{math.div($container, 2)}px));
+		}
+	}
+
+	// .about-us__content
+
+	&__content {
+		line-height: 155%;
+		flex: 0 0 413px;
+	}
+
+	// .about-us__slider
+
+	&__slider {
+		width: 100%; flex: 0 0 calc(100% - 413px);
+		margin-top: 20px;
+		@include _992 {
+			margin-top: 0;
+		}
+	}
+
+	// .about-us__track
+
+	&__track {
+		padding-right: 30px;
+	}
+
+	// .about-us__list
+
+	&__list {
+	}
+
+	// .about-us__slide
+
+	&__slide {
+	}
+
+	// .about-us__image
+
+	&__image {
+		height: 341px;
+		width: calc(100vw - 32px);
+		@include _768 {
+			width: auto;
+		}
+		transition: height .5s ease;
+		display: block;
+
+		background: var(--white);
+
+		aspect-ratio: var(--aspect-ratio);
+		padding-top: 0;
+		img {
+			position: static;
+			height: 100%; width: auto; min-width: 100%; max-width: 100%;
+			object-fit: cover;
+			background: var(--light-grey);
+		}
+	}
+}

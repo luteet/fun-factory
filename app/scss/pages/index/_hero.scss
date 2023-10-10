@@ -1,0 +1,146 @@
+.hero {
+
+	position: relative;
+
+	padding-top: var(--height-header,0px);
+
+	min-height: calc(var(--svh,1vh)*100);
+	min-height: 100svh;
+
+	display: flex;
+	flex-direction: column;
+
+	z-index: 0;
+
+	// .hero__background
+
+	&__background {
+		z-index: -1;
+	}
+
+	&__container {
+		flex: 1 1 auto;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		padding-top: 30px; padding-bottom: 30px;
+
+	}
+
+	// .hero__title
+
+	&__title {
+		text-align: center;
+		color: var(--white);
+
+		width: 100%;
+	}
+
+	// .hero__slider
+
+	&__slider {
+		overflow: visible;
+
+		padding: 0 60px;
+		
+		width: 100%;
+	}
+
+	// .hero__track
+
+	&__track {
+		&.splide__track {
+			overflow: visible;
+		}
+	}
+
+	// .hero__list
+
+	&__list {
+		
+	}
+
+	@media (any-hover: hover) {
+		&__list:hover &__slide {
+			filter: blur(3px);
+			&:hover {
+				filter: blur(0px);
+			}
+
+			&--image::after {
+				background: rgba(0,0,0,0.1);
+			}
+		}
+	}
+
+	// .hero__slide
+
+	&__slide {
+
+		position: relative;
+
+		transition: filter .3s ease;
+
+		// .hero__slide--image
+
+		&--image {
+			&::after {
+				content: '';
+				position: absolute;
+				left: 0; bottom: 0;
+				width: 100%; height: 100%;
+				background: transparent;
+				transition: background .3s ease, height .4s ease;
+			}
+			img {
+				top: auto; bottom: 0;
+				transition: height .4s ease, transform .3s ease;
+				//transform: translate3d(0,0px,0.001px);
+			}
+		}
+
+		@media (any-hover: hover) {
+			&:hover & {
+				&--image::after {
+					background: transparent;
+					height: calc(100% + 30px);
+				}
+				&--image img {
+					height: calc(100% + 30px);
+					//transform: translate3d(0,-30px,0.001px);
+				}
+
+				&--name {
+					opacity: 1; visibility: visible;
+				}
+			}
+		}
+
+		// .hero__slide--name
+
+		&--name {
+			position: absolute;
+			left: 50%; top: 50%;
+			transform: translate(-50%,-50%);
+
+			border-radius: 100px;
+			border: 1px solid var(--accent-2);
+			background: rgba(255, 255, 255, 0.80);
+			backdrop-filter: blur(3px);
+
+			padding: 16px 32px;
+
+			color: var(--accent-2);
+			font-size: 1.125rem;
+			font-weight: 600;
+			line-height: 133.333%;
+			text-transform: uppercase;
+
+			opacity: 0; visibility: hidden;
+			transition: opacity .3s ease, visibility .3s ease;
+		}
+	}
+}
+

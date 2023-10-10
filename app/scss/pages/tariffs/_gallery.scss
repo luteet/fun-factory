@@ -1,0 +1,85 @@
+@use 'sass:math';
+
+.gallery-3 {
+
+	padding-left: var(--container-padding);
+	
+	@media (min-width: #{$container}px) {
+		padding-left: max(var(--container-padding), calc(50% - #{math.div($container, 2)}px));
+	}
+
+	background: var(--light-grey);
+
+	& + .feedback {
+		background: var(--light-grey);
+	}
+
+	// .gallery-3__slider
+
+	&__slider {
+	}
+
+	// .gallery-3__track
+
+	&__track {
+	}
+
+	// .gallery-3__list
+
+	&__list {
+		display: flex;
+		align-items: flex-end;
+	}
+
+	// .gallery-3__slide
+
+	&__slide {
+		border: 0;
+	}
+
+	// .gallery-3__image
+
+	&__image {
+		height: 341px;
+		width: calc(100vw - 32px);
+		@include _768 {
+			width: auto;
+		}
+		transition: height .5s ease;
+		display: block;
+
+		background: var(--white);
+
+		aspect-ratio: var(--aspect-ratio);
+		padding-top: 0;
+		img {
+			position: static;
+			height: 100%; width: auto; min-width: 100%; max-width: 100%;
+			object-fit: cover;
+		}
+	}
+
+	// .gallery-3__nav
+
+	&__nav {
+		display: flex;
+		justify-content: center;
+		padding-right: var(--container-padding);
+		@include _768 {
+			padding-right: 0;
+			justify-content: flex-start;
+		}
+	}
+
+	// .gallery-3__arrow
+
+	&__arrow {
+		color: var(--black);
+		opacity: 1;
+	}
+
+	// .gallery-3__pages-length
+
+	&__pages-length {
+	}
+}

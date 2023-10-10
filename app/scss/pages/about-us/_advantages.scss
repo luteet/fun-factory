@@ -1,0 +1,113 @@
+.advantages {
+
+	background: var(--light-grey);
+	& + .feedback {
+		background: var(--light-grey);
+		z-index: 1;
+	}
+
+	// .advantages__title
+
+	&__title {
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0%; top: 100%;
+			transform: rotate(10deg);
+			@include _992 {
+				top: 120%;
+				transform: rotate(0deg);
+			}
+			@include _container {
+				left: 10%; top: 100%;
+				width: 190px; height: 190px;
+			}
+			width: 120px; height: 120px;
+			background: var(--decor-arrow);
+			pointer-events: none;
+		}
+	}
+
+	// .advantages__list
+
+	&__list {
+		padding-top: 108px;
+		@include _992 {
+			padding-top: 64px;
+			max-width: 847px;
+			margin-left: auto;
+		}
+	}
+
+	// .advantages__item
+
+	&__item {
+
+		padding: 16px;
+		@include _992 {
+			padding: 24px;
+		}
+		&:not(:first-child) {
+			margin-top: 24px;
+		}
+		
+		border: 1px solid var(--light-grey);
+		background: var(--white);
+		box-shadow: 0px 2.8016px 9.512px 0px rgba(190, 192, 195, 0.02), 0px 12.5248px 21.976px 0px rgba(190, 192, 195, 0.03), 0px 31.1472px 50.184px 0px rgba(190, 192, 195, 0.04), 0px 60.6464px 106.928px 0px rgba(190, 192, 195, 0.05), 0px 103px 205px 0px rgba(190, 192, 195, 0.07);
+
+		transition: background .3s ease, border-radius .3s ease, border-color .3s ease;
+		@media (any-hover: hover) {
+			&:hover {
+				background: var(--theme);
+				border-color: var(--theme);
+				border-radius: 24px;
+			}
+
+			&:hover &--icon {
+				background: var(--white);
+			}
+		}
+
+		// .advantages__item--icon
+
+		&--icon {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			width: 64px; height: 64px;
+
+			border-radius: 50%;
+			color: var(--black);
+			background: var(--theme);
+
+			transition: background .3s ease;
+		}
+
+		// .advantages__item--title
+
+		&--title {
+			margin-top: 16px;
+
+			font-size: 1.375rem;
+			
+			@include _992 {
+				font-size: 1.5rem;
+				text-transform: uppercase;
+			}
+
+			font-weight: 700;
+			line-height: 116.667%;
+			
+		}
+
+		// .advantages__item--text
+
+		&--text {
+			padding-top: 12px;
+
+			line-height: 144.44%;
+		}
+	}
+}

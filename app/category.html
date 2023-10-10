@@ -1,0 +1,87 @@
+@@include("html/_header.html", {
+	"class": ""
+})
+
+	<main class="main">
+		<section class="page-hero">
+			<div class="page-hero__start container">
+				@@include("html/_anim-background.html", {
+					"class": "page-hero__background",
+				})
+				<h1 class="page-hero__title main-title">
+					Дизайн
+				</h1>
+			</div>
+			<div class="page-hero__body container">
+				<div class="page-hero__breadcrumbs breadcrumbs">
+					<a href="#" class="breadcrumbs__link">Главная</a>
+					<span class="breadcrumbs__separator">
+						<svg width="20" height="20" viewBox="0 0 20 20">
+							<use xlink:href="img/sprites.svg#separator"></use>
+						</svg>
+					</span>
+					<span class="breadcrumbs__current">Дизайн</span>
+				</div>
+				<ul class="services__list hide-cards-on-mob">
+					@@loop("html/_services-card.html", [
+						{
+							"class": "services__card ",
+							"title": "Наружный дизайн",
+						},
+						{
+							"class": "services__card ",
+							"title": "Внутренний дизайн",
+						},
+						{
+							"class": "services__card ",
+							"title": "Украшение бассейнов",
+						},
+						{
+							"class": "services__card ",
+							"title": "Тематический дизайн",
+						},
+						{
+							"class": "services__card ",
+							"title": "Брендинг",
+						},
+						{
+							"class": "services__card ",
+							"title": "Гигантские куклы из воздушных шаров",
+						},
+						{
+							"class": "services__card ",
+							"title": "Фотозоны",
+						},
+					])
+				</ul>
+				<button class="services__see-more visible-on-mob" type="button">
+					<span>Показать все</span>
+					<svg width="24" height="24" viewBox="0 0 24 24">
+						<use xlink:href="img/sprites.svg#circle-arrow-next"></use>
+					</svg>
+				</button>
+			</div>
+		</section>
+		<section class="gallery-2">
+			<div class="gallery-2__container container">
+				<div class="gallery-2__body">
+					<h2 class="visually-hidden">
+						Галерея
+					</h2>
+					<div class="gallery-2__text">
+						<p>
+							У вас свадьба, бар мицва, юбилей,мальчишник/ девичник, или может быть вы хотите отпраздновать развод? Любое ваше мероприятие мы сделаем вам «под ключ». Вместе с вами придумаем сценарий праздника, исходя из ваших представлений, придумаем и воплотим в жизнь дизайн, предоставим всех необходимых поставщиков, поможем собрать и отправить гостей и многое другое. Любые, даже самые сумасшедшие и нестандартные идеи- воплотим в жизнь. Вам же останется только собирать восторженные отзывы гостей и наслаждаться вашим праздником. Почему мы? Потому что мы более 25 лет занимаемся организацией мероприятий, у нас лучшая команда профессионалов, мы заботимся о своей репутации и каждое мероприятие организовываем точно также, как если бы мы делали это для себя.
+						</p>
+						<p>
+							<b>Фабрика Развлечений - лучший выбор для организации любого праздника.</b>
+						</p>
+					</div>
+					@@include("html/_gallery-block.html")
+				</div>
+			</div>
+		</section>
+		@@include("html/_reviews.html")
+		@@include("html/_feedback.html")
+	</main>
+
+@@include("html/_footer.html")

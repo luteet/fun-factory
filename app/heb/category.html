@@ -1,0 +1,83 @@
+@@include("../html/_header-heb.html", {
+	"class": ""
+})
+
+	<main class="main">
+		<section class="page-hero">
+			<div class="page-hero__start container">
+				@@include("../html/heb/_anim-background.html", {
+					"class": "page-hero__background",
+				})
+				<h1 class="page-hero__title main-title">
+					לְעַצֵב
+				</h1>
+			</div>
+			<div class="page-hero__body container">
+				<div class="page-hero__breadcrumbs breadcrumbs">
+					<a href="index.html" class="breadcrumbs__link">בית</a>
+					<span class="breadcrumbs__separator">
+						<svg width="20" height="20" viewBox="0 0 20 20">
+							<use xlink:href="../img/sprites.svg#separator"></use>
+						</svg>
+					</span>
+					<span class="breadcrumbs__current">לְעַצֵב</span>
+				</div>
+				<ul class="services__list hide-cards-on-mob">
+					@@loop("../html/heb/_services-card.html", [
+						{
+							"class": "services__card ",
+							"title": "עיצוב נושאי",
+						},
+						{
+							"class": "services__card ",
+							"title": "קישוט בריכה",
+						},
+						{
+							"class": "services__card ",
+							"title": "עיצוב חיצוני",
+						},
+						{
+							"class": "services__card ",
+							"title": "עיצוב פנים",
+						},
+						{
+							"class": "services__card ",
+							"title": "פוטוזונים",
+						},
+						{
+							"class": "services__card ",
+							"title": "בובות בלון ענקיות",
+						},
+						{
+							"class": "services__card ",
+							"title": "מיתוג",
+						},
+					])
+				</ul>
+				<button class="services__see-more visible-on-mob" type="button" aria-label="הצג הכול">
+					<span>הצג הכול</span>
+					<svg width="24" height="24" viewBox="0 0 24 24">
+						<use xlink:href="../img/sprites.svg#circle-arrow-next"></use>
+					</svg>
+				</button>
+			</div>
+		</section>
+		<section class="gallery-2">
+			<div class="gallery-2__container container">
+				<div class="gallery-2__body">
+					<h2 class="visually-hidden">
+						Галерея
+					</h2>
+					<div class="gallery-2__text">
+						<p>יש לך חתונה, בר מצווה, יום נישואין, מסיבת רווקים / מסיבת רווקות, או אולי אתה רוצה לחגוג גירושין? כל אחד מהאירועים שלך נעשה לך « סוהר ». יחד איתך, נבוא עם תרחיש חג המבוסס על הרעיונות שלך, נבצע ויישם את העיצוב, נספק את כל הספקים הדרושים, נעזור לאסוף ולשלוח אורחים ועוד ועוד. כל אחד, אפילו הרעיונות המטורפים והחדשניים ביותר, יתעורר לחיים. תצטרך לאסוף ביקורות נלהבות של אורחים וליהנות מהחופשה שלך. למה אנחנו? מכיוון שאנו מארגנים אירועים כבר למעלה מ 25 שנה, יש לנו את הצוות הטוב ביותר של אנשי מקצוע, אנו דואגים למוניטין שלנו ומארגנים כל אירוע באותו אופן כאילו עשינו זאת בעצמנו.</p>
+						<p><b>מפעל הבידור הוא הבחירה הטובה ביותר לארגון כל חג.</b></p>
+					</div>
+					@@include("../html/heb/_gallery-block.html")
+				</div>
+			</div>
+		</section>
+		@@include("../html/heb/_reviews.html")
+		@@include("../html/heb/_feedback.html")
+	</main>
+
+@@include("../html/_footer-heb.html")

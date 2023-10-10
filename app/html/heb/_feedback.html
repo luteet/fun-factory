@@ -1,0 +1,30 @@
+<section class="feedback">
+	<div class="feedback__body container">
+		@@include("_anim-background.html", {
+			"class": "feedback__background",
+		})
+		<h2 class="feedback__title title">
+			צרו קשר עכשיו ובואו נתחיל לתכנן את אירוע חלומותיכם! ✨
+		</h2>
+		<form method="post" class="feedback__form">
+			<label>
+				<input type="text" name="name" placeholder="שֵׁם" required>
+			</label>
+			<label>
+				<input type="tel" name="tel" placeholder="טֵלֵפוֹן" required>
+			</label>
+			<label>
+				<textarea name="message" required placeholder="שדה קלט"></textarea>
+			</label>
+			<div class="btn-wrapper">
+				<button class="btn" type="submit">
+					<span>לִשְׁלוֹחַ</span>
+					<svg width="24" height="24" viewBox="0 0 24 24">
+						<use xlink:href="../img/sprites.svg#circle-arrow-next"></use>
+					</svg>
+				</button>
+				<div class="btn-circle"></div>
+			</div>
+		</form>
+	</div>
+</section>

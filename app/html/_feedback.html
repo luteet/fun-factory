@@ -1,0 +1,30 @@
+<section class="feedback">
+	<div class="feedback__body container">
+		@@include("_anim-background.html", {
+			"class": "feedback__background",
+		})
+		<h2 class="feedback__title title">
+			Свяжитесь с нами сейчас, и мы начнем планировать событие вашей мечты! ✨
+		</h2>
+		<form method="post" class="feedback__form">
+			<label>
+				<input type="text" name="name" placeholder="Имя" required>
+			</label>
+			<label>
+				<input type="tel" name="tel" placeholder="Телефон" required>
+			</label>
+			<label>
+				<textarea name="message" required placeholder="Поле для ввода"></textarea>
+			</label>
+			<div class="btn-wrapper">
+				<button class="btn" type="submit">
+					<span>Отправить</span>
+					<svg width="24" height="24" viewBox="0 0 24 24">
+						<use xlink:href="img/sprites.svg#circle-arrow-next"></use>
+					</svg>
+				</button>
+				<div class="btn-circle"></div>
+			</div>
+		</form>
+	</div>
+</section>

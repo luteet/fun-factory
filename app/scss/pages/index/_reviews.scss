@@ -1,0 +1,174 @@
+.reviews {
+
+	display: flex;
+	align-items: flex-end;
+	flex-wrap: wrap;
+
+	// .reviews__title
+
+	&__title {
+		flex: 1 1 auto;
+
+		padding-right: 16px;
+	}
+
+	// .reviews__leave
+
+	&__leave {
+		display: inline-block;
+		padding: 8px 0;
+		margin-top: 16px;
+
+		color: var(--black);
+		border-bottom: 1px solid var(--black);
+
+		margin-bottom: 4px;
+	}
+
+	// .reviews__slider
+
+	&__slider {
+		flex: 1 1 100%; width: 100%;
+
+		margin-top: 16px;
+		@include _768 {
+			margin-top: 56px;
+		}
+	}
+
+	// .reviews__track
+
+	&__track {
+	}
+
+	// .reviews__list
+
+	&__list {
+	}
+
+	// .reviews__card
+
+	&__card {
+
+		background: var(--light-grey);
+		padding: 16px;
+		@include _992 {
+			padding: 24px;
+		}
+
+		// .reviews__card--header
+
+		&--header {
+			display: flex;
+		}
+
+		// .reviews__card--avatar
+
+		&--avatar {
+			flex: 0 0 48px;
+			margin-right: 10px;
+		}
+
+		// .reviews__card--info
+
+		&--info {
+			flex: 1 1 auto;
+		}
+
+		// .reviews__card--name
+
+		&--name {
+			min-height: 48px;
+
+			display: flex;
+			align-items: center;
+
+			font-size: 1rem;
+			
+			@include _768 {
+				font-size: 1.125rem;
+			}
+
+			line-height: 122.222%;
+
+		}
+
+		// .reviews__card--rating
+
+		&--rating {
+			display: flex;
+			flex-wrap: wrap;
+
+			color: var(--gold);
+
+			li {
+				margin-right: 2px;
+			}
+		}
+
+		// .reviews__card--date
+
+		&--date {
+			font-size: 0.875rem;
+			line-height: 142.857%;
+		}
+
+		// .reviews__card--from
+
+		&--from {
+		}
+
+		// .reviews__card--text
+
+		&--text {
+			padding-top: 16px;
+			
+			font-size: 1rem;
+			@include _768 {
+				font-size: 1.125rem;
+			}
+			line-height: 144.444%;
+		}
+	}
+
+	// .reviews__nav
+
+	&__nav {
+		
+	}
+
+	// .reviews__arrow
+
+	&__arrow {
+		
+	}
+
+	// .reviews__pages-length
+
+	&__pages-length {
+		margin: 0 22px;
+		@media (min-width: #{$container + 160}px) {
+			display: none;
+			margin: 0;
+		}
+	}
+
+	// .reviews__footer
+
+	&__footer {
+		margin-top: 32px;
+
+		display: flex;
+		justify-content: center;
+
+		width: 100%;
+	}
+
+	// .reviews__more-btn
+
+	&__more-btn {
+		text-transform: uppercase;
+
+	}
+	
+}

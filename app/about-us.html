@@ -1,0 +1,124 @@
+@@include("html/_header.html", {
+	"class": ""
+})
+
+	<main class="main">
+		<section class="page-hero _alt">
+			<div class="page-hero__start container">
+				@@include("html/_anim-background.html", {
+					"class": "page-hero__background",
+				})
+				<h1 class="page-hero__title main-title">
+					О нас
+				</h1>
+			</div>
+			<div class="page-hero__body container">
+				<div class="page-hero__breadcrumbs breadcrumbs">
+					<a href="#" class="breadcrumbs__link">Главная</a>
+					<span class="breadcrumbs__separator">
+						<svg width="20" height="20" viewBox="0 0 20 20">
+							<use xlink:href="img/sprites.svg#separator"></use>
+						</svg>
+					</span>
+					<span class="breadcrumbs__current">О нас</span>
+				</div>
+			</div>
+		</section>
+		<section class="about-us none-padding-top">
+			<h2 class="about-us__title container section-title">
+				Фабрика Развлечений - ваш проводник в мир <mark>радости и веселья.</mark>
+			</h2>
+			<div class="about-us__block">
+				<div class="about-us__content">
+					<p>
+						Фабрика развлечений дает вам возможность не тратить время и нервы на организацию вашего праздника, а доверить его профессионалам. Ведь более 25 лет мы занимаемся организацией разнообразных мероприятий. От маленьких частных праздников, до огромных мировых шоу.Фабрика развлечений, это компания полного цикла. От разработки концепции, до последнего гостя- мы с вами.
+					</p>
+				</div>
+				<div class="about-us__slider splide">
+					<div class="about-us__track splide__track">
+						<ul class="about-us__list splide__list">
+							@@loop("html/_about-us-slide.html", [
+
+								{},
+								{},
+								{},
+								{},
+								{},
+
+								{},
+								{},
+								{},
+								{},
+								{},
+
+							])
+						</ul>
+					</div>
+					<div class="about-us__controls splide__arrows _alt slider-nav">
+						<button class="about-us__arrow slider-arrow splide__arrow splide__arrow--prev _alt" type="button">
+							<svg width="38" height="38" viewBox="0 0 38 38">
+								<use xlink:href="img/sprites.svg#slider-arrow-next"></use>
+							</svg>
+						</button>
+						<div class="about-us__pages-length slider-pages-length">
+							1/8
+						</div>
+						<button class="about-us__arrow slider-arrow splide__arrow splide__arrow--next _alt" type="button">
+							<svg width="38" height="38" viewBox="0 0 38 38">
+								<use xlink:href="img/sprites.svg#slider-arrow-next"></use>
+							</svg>
+						</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="advantages container">
+			<h2 class="advantages__title section-title">
+				С Фабрикой Развлечений ваш праздник пройдет легко и запомнится вам на всю жизнь.
+			</h2>
+			<ul class="advantages__list">
+				<li class="advantages__item" style="--theme: #FFE7AA;">
+					<div class="advantages__item--icon">
+						<svg width="32" height="32" viewBox="0 0 32 32">
+							<use xlink:href="img/sprites.svg#star"></use>
+						</svg>
+					</div>
+					<h3 class="advantages__item--title">Полный цикл</h3>
+					<div class="advantages__item--text">
+						<p>
+							Фабрика развлечений, это компания полного цикла. От разработки концепции, до последнего гостя- мы с вами.
+						</p>
+					</div>
+				</li>
+				<li class="advantages__item" style="--theme: #FDE;">
+					<div class="advantages__item--icon">
+						<svg width="32" height="32" viewBox="0 0 32 32">
+							<use xlink:href="img/sprites.svg#star"></use>
+						</svg>
+					</div>
+					<h3 class="advantages__item--title">Индивидуальный подход</h3>
+					<div class="advantages__item--text">
+						<p>
+							Наша компания организовывает от маленьких частных праздников дл огромных мировых шоу
+						</p>
+					</div>
+				</li>
+				<li class="advantages__item" style="--theme: #E9E5FF;">
+					<div class="advantages__item--icon">
+						<svg width="32" height="32" viewBox="0 0 32 32">
+							<use xlink:href="img/sprites.svg#star"></use>
+						</svg>
+					</div>
+					<h3 class="advantages__item--title">Большой выбор</h3>
+					<div class="advantages__item--text">
+						<p>
+							Любые виды дизайна, развлечения для детей и взрослых, ведущие, музыканты, логистика праздника и многое другое - все это мы умеем и любим делать.
+						</p>
+					</div>
+				</li>
+			</ul>
+		</section>
+		@@include("html/_feedback.html")
+	</main>
+
+@@include("html/_footer.html")

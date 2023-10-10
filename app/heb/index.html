@@ -1,0 +1,110 @@
+@@include("../html/_header-heb.html", {
+	"class": "",
+})
+
+	<main class="main">
+		<section class="hero">
+			@@include("../html/heb/_anim-background.html", {
+				"class": "hero__background",
+			})
+			<div class="hero__container container">
+				<h1 class="hero__title main-title">
+					מפעל הבידור
+				</h1>
+			</div>
+			<div class="hero__slider splide">
+				<div class="hero__track splide__track">
+					<ul class="hero__list splide__list">
+						@@loop("../html/heb/_hero-slide.html", [
+							{"image": '1'},
+							{"image": '2'},
+							{"image": '3'},
+							{"image": '4'},
+							{"image": '5'},
+						])
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section class="services container">
+			<h2 class="visually-hidden">
+				שירותים
+			</h2>
+			<ul class="services__list">
+				@@loop("../html/heb/_services-card.html", [
+					{
+						"class": "services__card ",
+						"title": "ארגון אירועים",
+					},
+					{
+						"class": "services__card ",
+						"title": "לְעַצֵב",
+					},
+					{
+						"class": "services__card ",
+						"title": "הַסעָדָה",
+					},
+					{
+						"class": "services__card ",
+						"title": "תמונה/וידאו",
+					},
+					{
+						"class": "services__card ",
+						"title": "אזורי בילוי",
+					},
+					{
+						"class": "services__card ",
+						"title": "אמנים",
+					},
+					{
+						"class": "services__card ",
+						"title": "אנימטורים",
+					},
+					{
+						"class": "services__card ",
+						"title": "רחבת ריקודים",
+					},
+				])
+			</ul>
+			<div class="btn-wrapper">
+				<button class="services__load-more btn" type="button" aria-label="כל השירותים">
+					<span>כל השירותים</span>
+					<svg width="24" height="24" viewBox="0 0 24 24">
+						<use xlink:href="../img/sprites.svg#circle-arrow-next"></use>
+					</svg>
+				</button>
+				<div class="btn-circle"></div>
+			</div>
+		</section>
+		@@include("../html/heb/_reviews.html")
+		<section class="gallery container">
+			<h2 class="gallery__title section-title">
+				גלריה
+			</h2>
+			@@include("../html/heb/_gallery-block.html")
+		</section>
+		<section class="our-partners">
+			<h2 class="our-partners__title section-title">
+				 שֶׁלָנוּ
+				 <br>
+				 שותפים
+			</h2>
+			<div class="our-partners__slider splide">
+				<div class="our-partners__track splide__track">
+					<ul class="our-partners__list splide__list">
+						@@loop("../html/heb/_our-partners-slide.html", [
+							{},
+							{},
+							{},
+							{},
+							{},
+							{},
+						])
+					</ul>
+				</div>
+			</div>
+		</section>
+		@@include("../html/heb/_feedback.html")
+	</main>
+
+@@include("../html/_footer-heb.html")

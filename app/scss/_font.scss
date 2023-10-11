@@ -31,12 +31,15 @@
 	}
 
 	@include _768 {
-		font-size: 5.5rem;
+		font-size: 4rem;
 	}
 
-	@include _992 {
+	@media (min-width: #{$container+100}px) {
 		font-size: 7.25rem;
 		line-height: 108.621%;
+		wbr {
+			display: none;
+		}
 	}
 }
 

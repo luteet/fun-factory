@@ -145,8 +145,14 @@ function Popup(arg) {
 			});
 
 			if (saveID) {
-				let url = new URL(window.location);
-				if (url.hash) {
+				let url = new URL(window.location), url2 = new URL(window.location);
+
+				url2.search = '';
+				url.hash = url.hash.split('?')[0];
+				
+				if (url.hash == url2.hash && url.hash.indexOf('#') == 0) {
+					open(url.hash, true);
+				} else if(url.hash.length < url2.hash.length && url.hash.indexOf('#') == 0) {
 					open(url.hash, true);
 				}
 			}
@@ -482,6 +488,23 @@ body.addEventListener('click', function (event) {
 	}
 	
 	// =-=-=-=-=-=-=-=-=-=-=-=- </faq> -=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+	// =-=-=-=-=-=-=-=-=-=-=-=- <table-of-contents> -=-=-=-=-=-=-=-=-=-=-=-=
+	
+	const tableOfContentsLink = $(".text-section__aside a");
+	if(tableOfContentsLink) {
+	
+		event.preventDefault();
+		const section = document.querySelector(tableOfContentsLink.getAttribute('href'));
+		section.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+
+		history.pushState('', "", tableOfContentsLink.getAttribute('href'));
+	
+	}
+	
+	// =-=-=-=-=-=-=-=-=-=-=-=- </table-of-contents> -=-=-=-=-=-=-=-=-=-=-=-=
 
 })
 
@@ -880,28 +903,34 @@ document.querySelectorAll('.header__nav--list > li > button').forEach(btn => {
 
 })
 
-/* document.querySelectorAll('.header__nav--list > li > div > ul > li > ul > li > a').forEach(btn => {
-
-	btn.addEventListener('click', function (event) {
-		btn.classList.add('is-active');
-	})
-
-	btn.parentElement.addEventListener('pointerleave', function (event) {
-		btn.classList.remove('is-active');
-	})
-
-}) */
-
 // =-=-=-=-=-=-=-=-=-=-=-=- </btn-hover> -=-=-=-=-=-=-=-=-=-=-=-=
 
 
-/* 
-// =-=-=-=-=-=-=-=-=-=-=-=- <animation> -=-=-=-=-=-=-=-=-=-=-=-=
 
-AOS.init({
-	disable: "mobile",
-});
+// =-=-=-=-=-=-=-=-=-=-=-=- <cookies> -=-=-=-=-=-=-=-=-=-=-=-=
 
-// =-=-=-=-=-=-=-=-=-=-=-=- </animation> -=-=-=-=-=-=-=-=-=-=-=-=
+const cookiesBtn = document.querySelector('.cookies__btn'),
+	  cookies = document.querySelector('.cookies'),
+	  cookiesClose = document.querySelector('.cookies__close');
 
-*/
+if(cookiesBtn && cookiesClose && !localStorage.getItem('fun-factory-cookies')) {
+	setTimeout(() => {
+		cookies.classList.add('fade-in-2');
+
+		cookiesBtn.addEventListener('click', function () {
+			localStorage.setItem('fun-factory-cookies', true);
+
+			cookies.classList.add('fade-out-2');
+			cookies.classList.remove('fade-in-2');
+		})
+
+		cookiesClose.addEventListener('click', function () {
+			cookies.classList.add('fade-out-2');
+			cookies.classList.remove('fade-in-2');
+		})
+	},2000)
+} else {
+	if(cookies) cookies.remove();
+}
+
+// =-=-=-=-=-=-=-=-=-=-=-=- </cookies> -=-=-=-=-=-=-=-=-=-=-=-=

@@ -1,0 +1,90 @@
+.cookies {
+
+	opacity: 0; visibility: hidden;
+
+	position: fixed;
+	left: 0; bottom: 24px; right: 0;
+
+	z-index: 2;
+
+	max-width: min(1280px, calc(100vw - var(--container-padding) * 2));
+	margin: 0 auto;
+
+	background: var(--white);
+	padding: 16px;
+	@include _550 {
+		padding: 24px;
+	}
+
+	display: grid;
+	@include _992 {
+		grid-template-columns: 116px auto min-content;
+	}
+
+	// .cookies__close
+
+	&__close {
+		background: transparent;
+		position: absolute;
+		right: 0; top: 0;
+
+		padding: 8px;
+		@include _550 {
+			padding: 16px;
+		}
+	}
+
+	// .cookies__image
+
+	&__image {
+		img {
+			width: 48px; height: 48px;
+			@include _992 {
+				width: 100px; height: 100px;
+			}
+		}
+	}
+
+	// .cookies__info
+
+	&__info {
+		padding-top: 8px;
+		@include _992 {
+			padding-right: 31px;
+		}
+
+		p {
+			padding-top: 12px;
+
+			font-size: 1.125rem;
+			line-height: 144.444%;
+
+			a {
+				color: var(--blue);
+			}
+		}
+	}
+
+	// .cookies__btn
+
+	.btn-wrapper {
+		align-self: self-end;
+		margin-top: 16px;
+		width: 100%;
+		@include _550 {
+			width: auto;
+		}
+		@include _992 {
+			margin-top: 0;
+		}
+	}
+
+	&__btn {
+		white-space: nowrap;
+		text-transform: uppercase;
+		width: 100%;
+		@include _550 {
+			width: auto;	
+		}
+	}
+}

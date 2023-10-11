@@ -11,6 +11,10 @@
 
 	&__aside {
 		align-self: self-start;
+		@include _992 {
+			position: sticky;
+			left: 0; top: 20px;
+		}
 
 		padding: 24px;
 		background: var(--light-grey);
@@ -21,6 +25,16 @@
 
 		a {
 			color: var(--accent-2);
+			@media (any-hover: hover) {
+				transition: color .15s ease;
+				&:hover {
+					color: var(--accent);
+				}
+				
+				&:active {
+					color: var(--black);
+				}
+			}
 		}
 	}
 
@@ -60,6 +74,13 @@
 
 				padding-bottom: 8px;
 			}
+		}
+
+		a {
+			color: var(--black);
+			text-decoration: underline;
+			text-decoration-skip: none;
+			text-underline-offset: 5px;
 		}
 
 		p:not(:first-child) {

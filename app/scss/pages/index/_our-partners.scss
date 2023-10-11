@@ -38,12 +38,14 @@
 	&__slider {
 		
 		margin-top: 32px;
-		width: calc(100% - 443px);
+		
 
 		padding-right: 80px;
 		@include _992 {
 			margin-top: 0;
 			padding-right: 0;
+
+			width: calc(100% - 443px);
 		}
 	}
 

@@ -399,7 +399,7 @@ body.addEventListener('click', function (event) {
 		const list = servicesLoadMore.closest('section').querySelector('.services__list');
 		list.classList.remove('hide-cards');
 
-		list.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+	 	if(window.innerWidth > 991) list.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
 	
 	}
 	

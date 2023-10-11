@@ -35,12 +35,18 @@
 		@include _768 {
 			width: auto;
 			text-align: start;
+			
 		}
 	}
 
 	&__text {
 		color: var(--white);
 		padding-top: 24px;
+		text-align: center;
+		width: 100%;
+		@include _768 {
+			text-align: start;
+		}
 	}
 
 	&__list {

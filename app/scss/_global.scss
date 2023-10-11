@@ -505,6 +505,13 @@ section:not(:first-child) {
 					@include _992 {
 						transform: none;
 					}
+					a {
+						@media (any-hover: hover) {
+							&:hover {
+								transform: translate(-3px,0);
+							}
+						}
+					}
 				}
 
 				> div > button {
@@ -515,9 +522,11 @@ section:not(:first-child) {
 
 				> div > ul > li > ul > li {
 					text-align: right;
+
 				}
 
 				> div > ul > li > ul > li > a {
+					
 					svg {
 						transform: rotate(90deg);
 						@include _992 {
@@ -879,6 +888,15 @@ section:not(:first-child) {
 	}
 
 	.footer {
+		&__nav {
+			> ul > li ul a {
+				@media (any-hover: hover) {
+					&:hover {
+						transform: translate(-3px,0);
+					}
+				}
+			}
+		}
 		&__contacts {
 			svg {
 				margin-right: 0; margin-left: 8px;

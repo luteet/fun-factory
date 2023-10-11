@@ -479,7 +479,7 @@
 										font-size: 1.125rem;
 										color: var(--black);
 
-										transition: padding .2s ease, color .2s ease;
+										transition: transform .2s ease, color .2s ease;
 
 										svg {
 											flex: 0 0 24px;
@@ -489,7 +489,7 @@
 										@media (any-hover: hover) {
 											&:hover {
 												color: var(--accent);
-												padding: 12px 0 12px 12px;
+												transform: translate(3px,0);
 											}
 										}
 									}

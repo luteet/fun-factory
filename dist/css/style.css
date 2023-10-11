@@ -10,7 +10,7 @@ progress,sub,sup {
     padding: 0
 }
 
-.popup,.splide {
+.header__nav,.popup,.splide {
     visibility: hidden
 }
 
@@ -538,6 +538,10 @@ img {
     vertical-align: top
 }
 
+.container,[dir=rtl] .gallery-3,[dir=rtl] .our-partners {
+    padding-right: var(--container-padding)
+}
+
 h1,h2,h3,h4,h5,h6 {
     font-size: inherit;
     font-weight: 400;
@@ -763,14 +767,14 @@ section {
     z-index: -1
 }
 
-.gallery-popup__track.splide__track,.hero__slider,.hero__track.splide__track,.main.visible,.our-partners__track.splide__track {
-    overflow: visible
-}
-
 .btn,.slider-pages-length {
     align-items: center;
     line-height: 100%;
     color: var(--white)
+}
+
+.main.visible {
+    overflow: visible
 }
 
 .main.padding-bottom {
@@ -794,8 +798,7 @@ section {
 }
 
 .container {
-    padding-left: var(--container-padding);
-    padding-right: var(--container-padding)
+    padding-left: var(--container-padding)
 }
 
 @media(min-width:1280px) {
@@ -1187,6 +1190,13 @@ section:not(:first-child) {
     }
 }
 
+@media(any-hover:hover) {
+    [dir=rtl] .header__nav--list>li>div>ul>li>ul>li>div a:hover {
+        -webkit-transform: translate(-3px,0);
+        transform: translate(-3px,0)
+    }
+}
+
 [dir=rtl] .header__nav--list>li>div>button svg {
     -webkit-transform: rotate(-90deg);
     transform: rotate(-90deg)
@@ -1352,15 +1362,7 @@ section:not(:first-child) {
 }
 
 [dir=rtl] .our-partners {
-    padding-right: var(--container-padding);
     padding-left: var(--container-padding)
-}
-
-@media(min-width:1280px) {
-    [dir=rtl] .our-partners {
-        padding-right: max(var(--container-padding),50% - 640px);
-        padding-left: 0
-    }
 }
 
 [dir=rtl] .breadcrumbs {
@@ -1384,11 +1386,15 @@ section:not(:first-child) {
 }
 
 [dir=rtl] .gallery-3 {
-    padding-left: 0;
-    padding-right: var(--container-padding)
+    padding-left: 0
 }
 
 @media(min-width:1280px) {
+    [dir=rtl] .our-partners {
+        padding-right: max(var(--container-padding),50% - 640px);
+        padding-left: 0
+    }
+
     [dir=rtl] .gallery-3 {
         padding-left: 0;
         padding-right: max(var(--container-padding),50% - 640px)
@@ -1456,6 +1462,11 @@ section:not(:first-child) {
         -webkit-transform: rotate(0) scaleX(-1);
         transform: rotate(0) scaleX(-1)
     }
+}
+
+.popup,.popup-bg {
+    top: 0;
+    height: 100%
 }
 
 [dir=rtl] .about-cource__title::before {
@@ -1751,9 +1762,7 @@ input:focus::placeholder,textarea:focus::placeholder {
 .popup {
     position: fixed;
     left: 0;
-    top: 0;
     width: 100%;
-    height: 100%;
     display: flex;
     align-items: center;
     padding: 10px;
@@ -1786,9 +1795,7 @@ input:focus::placeholder,textarea:focus::placeholder {
 .popup-bg {
     position: absolute;
     left: 0;
-    top: 0;
     width: 100%;
-    height: 100%;
     background: rgba(0,0,0,.71)
 }
 
@@ -1804,6 +1811,10 @@ input:focus::placeholder,textarea:focus::placeholder {
     padding: 15px;
     border-radius: 14px;
     z-index: 2
+}
+
+.gallery-popup__track.splide__track,.hero__slider,.hero__track.splide__track,.our-partners__track.splide__track {
+    overflow: visible
 }
 
 @media(min-width:550px) {
@@ -1926,6 +1937,11 @@ input:focus::placeholder,textarea:focus::placeholder {
 }
 
 @media(any-hover:hover) {
+    [dir=rtl] .footer__nav>ul>li ul a:hover {
+        -webkit-transform: translate(-3px,0);
+        transform: translate(-3px,0)
+    }
+
     .gallery-popup__image-panel--link:hover>span {
         grid-template-columns: 1fr
     }
@@ -1996,7 +2012,6 @@ input:focus::placeholder,textarea:focus::placeholder {
     overflow-y: auto;
     overflow-x: hidden;
     opacity: 0;
-    visibility: hidden;
     transition: opacity .3s ease,visibility .3s ease
 }
 
@@ -2208,12 +2223,6 @@ input:focus::placeholder,textarea:focus::placeholder {
     display: none
 }
 
-.header__nav--list>li>a,.header__nav--list>li>button,.header__nav--list>li>div>button,.header__nav--list>li>div>ul>li>ul>li>a,.header__nav--list>li>div>ul>li>ul>li>div>button {
-    font-size: 1.125rem;
-    font-weight: 400;
-    text-transform: uppercase
-}
-
 @media(min-width:992px) {
     .header__nav--list>li>div h2 {
         display: block
@@ -2222,10 +2231,13 @@ input:focus::placeholder,textarea:focus::placeholder {
 
 .header__nav--list>li>div>button {
     text-align: left;
+    text-transform: uppercase;
     background: rgba(0,0,0,0);
     display: inline-flex;
     align-items: center;
     color: var(--dark-grey);
+    font-size: 1.125rem;
+    font-weight: 400;
     line-height: 111.111%
 }
 
@@ -2283,7 +2295,10 @@ input:focus::placeholder,textarea:focus::placeholder {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    text-transform: uppercase;
     color: var(--black);
+    font-size: 1.125rem;
+    font-weight: 400;
     line-height: 109.091%;
     -webkit-text-stroke-color: transparent;
     -webkit-text-stroke-width: 1px;
@@ -2375,6 +2390,15 @@ input:focus::placeholder,textarea:focus::placeholder {
     z-index: 3
 }
 
+.header__nav--list>li>a,.header__nav--list>li>button,.header__nav--list>li>div>ul>li>ul>li>div>button {
+    font-size: 1.125rem;
+    font-weight: 400;
+    background: rgba(0,0,0,0);
+    align-items: center;
+    width: 100%;
+    text-transform: uppercase
+}
+
 @media(min-width:992px) {
     .header__nav--list>li>div>ul>li>ul>li>div {
         position: static;
@@ -2400,10 +2424,7 @@ input:focus::placeholder,textarea:focus::placeholder {
 
 .header__nav--list>li>div>ul>li>ul>li>div>button {
     text-align: left;
-    background: rgba(0,0,0,0);
     display: flex;
-    align-items: center;
-    width: 100%;
     color: var(--dark-grey);
     line-height: 111.111%;
     margin-bottom: 8px
@@ -2431,7 +2452,9 @@ input:focus::placeholder,textarea:focus::placeholder {
     padding: 12px 0;
     font-size: 1.125rem;
     color: var(--black);
-    transition: padding .2s ease,color .2s ease
+    transition: color .2s ease,-webkit-transform .2s ease;
+    transition: transform .2s ease,color .2s ease;
+    transition: transform .2s ease,color .2s ease,-webkit-transform .2s ease
 }
 
 .header__nav--list>li>div>ul>li>ul>li>div>ul a svg {
@@ -2443,7 +2466,8 @@ input:focus::placeholder,textarea:focus::placeholder {
 @media(any-hover:hover) {
     .header__nav--list>li>div>ul>li>ul>li>div>ul a:hover {
         color: var(--accent);
-        padding: 12px 0 12px 12px
+        -webkit-transform: translate(3px,0);
+        transform: translate(3px,0)
     }
 
     .header__nav--list>li>a:hover span::before,.header__nav--list>li>button:hover span::before {
@@ -2452,14 +2476,11 @@ input:focus::placeholder,textarea:focus::placeholder {
 }
 
 .header__nav--list>li>a,.header__nav--list>li>button {
-    width: 100%;
     min-height: 100%;
     padding: 16px 0;
     color: var(--black);
     line-height: 109.091%;
-    background: rgba(0,0,0,0);
     display: flex;
-    align-items: center;
     position: relative
 }
 

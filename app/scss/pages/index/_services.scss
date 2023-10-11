@@ -41,7 +41,15 @@
 		padding-bottom: 32px;
 
 		@include _768 {
-			padding-bottom: 0; padding-top: 32px;
+			padding-bottom: 0; margin-top: 32px;
+		}
+
+
+	}
+
+	&__list.hide-cards &__card {
+		&:nth-child(n + 9) {
+			display: none;
 		}
 	}
 

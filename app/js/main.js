@@ -393,6 +393,16 @@ body.addEventListener('click', function (event) {
 
 	// =-=-=-=-=-=-=-=-=-=-=-=- <services> -=-=-=-=-=-=-=-=-=-=-=-=
 	
+	const servicesLoadMore = $(".services__load-more")
+	if(servicesLoadMore) {
+	
+		const list = servicesLoadMore.closest('section').querySelector('.services__list');
+		list.classList.remove('hide-cards');
+
+		list.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+	
+	}
+	
 	const servicesSeeMore = $(".services__see-more")
 	if(servicesSeeMore) {
 	

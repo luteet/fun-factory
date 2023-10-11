@@ -245,7 +245,7 @@ section {
 	margin-left: 0px;
 	margin-top: 0px;
 	pointer-events: none;
-	transition: opacity .3s ease;
+	//transition: opacity .3s ease;
 }
 
 @keyframes btn_active {
@@ -586,6 +586,23 @@ section:not(:first-child) {
 		&__contacts {
 			svg {
 				margin-right: 0; margin-left: 8px;
+			}
+		}
+	}
+
+	.page-hero {
+		&__list {
+	
+			li {
+	
+				padding-top: 18px;
+				@include _992 {
+					padding-left: 64px; padding-right: 0;
+				}
+	
+				svg {
+					margin-right: 0; margin-left: 8px;
+				}
 			}
 		}
 	}

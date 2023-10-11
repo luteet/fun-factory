@@ -67,6 +67,11 @@
 		&--avatar {
 			flex: 0 0 48px;
 			margin-right: 10px;
+
+			img {
+				border-radius: 50%;
+				background: var(--white);
+			}
 		}
 
 		// .reviews__card--info

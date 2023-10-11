@@ -60,7 +60,10 @@
 			display: inline-flex;
 			align-items: center;
 
-			padding-right: 64px; padding-top: 18px;
+			padding-top: 18px;
+			@include _992 {
+				padding-right: 64px;
+			}
 
 			color: var(--white);
 

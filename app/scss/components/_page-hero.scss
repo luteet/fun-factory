@@ -10,8 +10,7 @@
 	&__start {
 		position: relative;
 
-		min-height: calc(100vh - var(--height-header,0px));
-		min-height: calc(100svh - var(--height-header,0px));
+		min-height: 400px;
 		@include _992 {
 			min-height: 425px;
 		}

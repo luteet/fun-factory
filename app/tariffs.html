@@ -1,5 +1,10 @@
 @@include("html/_header.html", {
-	"class": ""
+	"class": "",
+	"home": "",
+	"services": "",
+	"tariffs": "is-current",
+	"courses": "",
+	"about_us": "",
 })
 
 	<main class="main">
@@ -254,7 +259,7 @@
 			<h2 class="visually-hidden">
 				Галерея
 			</h2>
-			<div class="gallery-3__slider splide">
+			<div class="gallery-3__slider gallery-slider splide" data-popup-id="gallery-popup-slider">
 				<div class="gallery-3__track splide__track">
 					<ul class="gallery-3__list splide__list">
 						@@loop("html/_gallery-3-slide.html", [

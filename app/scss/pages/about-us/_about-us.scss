@@ -17,6 +17,8 @@
 		@include _992 {
 			margin-top: 64px;
 			display: flex;
+
+			gap: 24px;
 		}
 
 		padding-left: var(--container-padding);
@@ -67,6 +69,7 @@
 		@include _768 {
 			width: auto;
 		}
+		
 		transition: height .5s ease;
 		display: block;
 

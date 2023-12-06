@@ -719,6 +719,12 @@ section:not(:first-child) {
 				}
 			}
 
+			&.is-accent {
+				&::after {
+					left: 30px; top: -30px; right: auto;
+				}
+			}
+
 			&--learn-more svg {
 				margin-left: 0; margin-right: 8px;
 			}

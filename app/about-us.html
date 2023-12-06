@@ -1,5 +1,10 @@
 @@include("html/_header.html", {
-	"class": ""
+	"class": "",
+	"home": "",
+	"services": "",
+	"tariffs": "",
+	"courses": "",
+	"about_us": "is-current",
 })
 
 	<main class="main">
@@ -34,7 +39,7 @@
 						Фабрика развлечений дает вам возможность не тратить время и нервы на организацию вашего праздника, а доверить его профессионалам. Ведь более 25 лет мы занимаемся организацией разнообразных мероприятий. От маленьких частных праздников, до огромных мировых шоу.Фабрика развлечений, это компания полного цикла. От разработки концепции, до последнего гостя- мы с вами.
 					</p>
 				</div>
-				<div class="about-us__slider splide">
+				<div class="about-us__slider gallery-slider splide" data-popup-id="gallery-popup-slider">
 					<div class="about-us__track splide__track">
 						<ul class="about-us__list splide__list">
 							@@loop("html/_about-us-slide.html", [
@@ -42,11 +47,7 @@
 								{},
 								{},
 								{},
-								{},
-								{},
-
-								{},
-								{},
+								
 								{},
 								{},
 								{},

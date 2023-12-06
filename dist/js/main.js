@@ -186,25 +186,112 @@ imageAspectRatio.forEach(imageAspectRatio => {
 
 // =-=-=-=-=-=-=-=-=-=- <click events> -=-=-=-=-=-=-=-=-=-=-
 
-let gallery3Slider, galleryPopupSlider;
 
-if(document.querySelector('.gallery-3__slider') && document.querySelector('.gallery-popup__slider')) {
 
-	gallery3Slider = new Splide('.gallery-3__slider', {
+document.querySelectorAll('.gallery-slider').forEach(sliderElement => {
+
+	let gallery3Slider, galleryPopupSlider;
+	
+	gallery3Slider = new Splide(sliderElement, {
 
 		type: "loop",
 		autoWidth: true,
 		gap: 20,
 		pagination: false,
-		speed: 700,
-		easing: "ease",
 		updateOnMove: true,
 		isNavigation: true,
+		mediaQuery: "min",
+		breakpoints: {
+			550: {
+				speed: 700,
+				easing: "ease",
+			}
+		},
+
+		direction: html.getAttribute('dir') == "rtl" ? 'rtl' : 'ltr',
+
+	});
+	
+	galleryPopupSlider = new Splide(`#${sliderElement.dataset.popupId}`, {
+
+		type: "loop",
+		focus: "center",
+		autoWidth: true,
+		gap: 20,
+		pagination: false,
+		arrows: false,
+		updateOnMove: true,
+		isNavigation: true,
+		direction: html.getAttribute('dir') == "rtl" ? 'rtl' : 'ltr',
+		mediaQuery: "min",
+		breakpoints: {
+			550: {
+				speed: 700,
+				easing: "ease",
+			}
+		},
+		
+	});
+
+	gallery3Slider.root.querySelectorAll('.gallery-slider__image').forEach((image, index) => {
+		image.setAttribute('data-index', index);
+	})
+
+	const galleryPopupLength = galleryPopupSlider.root.closest('.popup').querySelector('.gallery-popup__length span');
+	galleryPopupSlider.on('mounted moved', function () {
+		if(html.getAttribute('dir') == 'rtl') {
+			galleryPopupLength.textContent = `${galleryPopupSlider.length}/${galleryPopupSlider.index+1}`;
+		} else {
+			galleryPopupLength.textContent = galleryPopupSlider.index+1 + '/' + galleryPopupSlider.length;
+		}
+		
+	})
+
+	let sliderPagesLength = gallery3Slider.root.querySelector('.slider-pages-length');
+
+	if(gallery3Slider) {
+		gallery3Slider.on('mounted moved', function (event) {
+			if(html.getAttribute('dir') == 'rtl') {
+				sliderPagesLength.textContent = `${gallery3Slider.length}/${gallery3Slider.index+1}`
+			} else {
+				sliderPagesLength.textContent = `${gallery3Slider.index+1}/${gallery3Slider.length}`
+			}
+		})
+	}
+
+	gallery3Slider.sync(galleryPopupSlider);
+	galleryPopupSlider.mount();
+	gallery3Slider.mount();
+
+	galleryPopupSlider.go(0);
+
+})
+
+/* if(document.querySelector('.gallery-slider') && document.querySelector('.gallery-popup__slider')) {
+
+	
+
+	gallery3Slider = new Splide('.gallery-slider', {
+
+		type: "loop",
+		autoWidth: true,
+		gap: 20,
+		pagination: false,
+		
+		updateOnMove: true,
+		isNavigation: true,
+		mediaQuery: "min",
+		breakpoints: {
+			550: {
+				speed: 700,
+				easing: "ease",
+			}
+		},
 		direction: html.getAttribute('dir') == "rtl" ? 'rtl' : 'ltr',
 
 	});
 
-	galleryPopupSlider = new Splide('.gallery-popup__slider', {
+	galleryPopupSlider = new Splide(`#${gallery3Slider.root.dataset.popupId}`, {
 
 		type: "loop",
 		focus: "center",
@@ -220,7 +307,7 @@ if(document.querySelector('.gallery-3__slider') && document.querySelector('.gall
 		
 	});
 
-	gallery3Slider.root.querySelectorAll('.gallery-3__image').forEach((image, index) => {
+	gallery3Slider.root.querySelectorAll('.gallery-slider__image').forEach((image, index) => {
 		image.setAttribute('data-index', index);
 	})
 
@@ -252,7 +339,7 @@ if(document.querySelector('.gallery-3__slider') && document.querySelector('.gall
 
 	galleryPopupSlider.go(0)
 
-}
+} */
 
 
 body.addEventListener('click', function (event) {
@@ -744,7 +831,7 @@ if(document.querySelector('.our-partners__slider')) {
 
 if(document.querySelector('.about-us__slider')) {
 
-	const slider = new Splide('.about-us__slider', {
+	/* const slider = new Splide('.about-us__slider', {
 
 		type: "loop",
 		autoWidth: true,
@@ -768,13 +855,13 @@ if(document.querySelector('.about-us__slider')) {
 		})
 	}
 
-	slider.mount();
+	slider.mount(); */
 
 }
 
 if(document.querySelector('.portfolio__slider')) {
 
-	const slider = new Splide('.portfolio__slider', {
+	/* const slider = new Splide('.portfolio__slider', {
 
 		type: "loop",
 		autoWidth: true,
@@ -798,7 +885,7 @@ if(document.querySelector('.portfolio__slider')) {
 		})
 	}
 
-	slider.mount();
+	slider.mount(); */
 
 }
 

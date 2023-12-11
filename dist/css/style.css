@@ -760,7 +760,7 @@ section {
 .main {
     overflow: hidden;
     flex: 1 0 auto;
-    z-index: -1
+    z-index: auto
 }
 
 .btn,.slider-pages-length {
